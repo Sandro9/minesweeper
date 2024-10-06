@@ -51,7 +51,7 @@ export class PlaygroundGrid<T extends (Mine | NumberField) = (Mine | NumberField
         }
     }
 
-    public getGraph(): Graph {
+    public getGraph(): Graph<T> {
         return this._graph;
     }
 
