@@ -53,7 +53,7 @@ export class DOMRendererComponent {
     if(isMine) {
       return mineColor
     }
-    return 'bg-slate-200';
+    return 'bg-slate-300';
   }
 
   public fieldInteraction(index: string) {
