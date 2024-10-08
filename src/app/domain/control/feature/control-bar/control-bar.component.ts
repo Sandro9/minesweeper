@@ -25,29 +25,17 @@ export class ControlBarComponent implements OnInit {
       filter((seed) => seed !== null),
       debounceTime(400),
     ).subscribe((seed) => {
-      this.appComponent.generatePlaygroundBySeed(seed);
+      // this.appComponent.generatePlaygroundBySeed(seed);
     })
     this.playground().flagModeActive$.subscribe((flagModeActive) => {
       this.isFlagModeActive.set(flagModeActive);
     })
   }
 
-  public toggleFlagMode() {
+
+  public toggleFlagMode(): void {
     this.playground().toggleFlagMode();
   }
-<<<<<<< Tabnine <<<<<<<
-  /**//+
-   * Toggles the flag mode of the playground.//+
-   *//+
-   * This function is responsible for toggling the flag mode of the playground,//+
-   * allowing the user to mark cells as potential mines.//+
-   *//+
-   * @returns {void}//+
-   *///+
-  public toggleFlagMode(): void {//+
-    this.playground().toggleFlagMode();//+
-  }//+
->>>>>>> Tabnine >>>>>>>// {"conversationId":"d2633a64-465e-4772-8a2c-c9ecd6b8fd73","source":"instruct"}
 
   public updateSeed(value: Event) {
     console.log(value);

@@ -1,8 +1,2 @@
-@let playgroundRef = playground();
-@if(playgroundRef !== null) {
-    <div class="flex flex-col gap-3">
-        <app-info-bar />
-        <app-control-bar [playground]="playgroundRef" />
-        <app-domrenderer [playground]="playgroundRef"/>
-    </div>
-}
+
+<router-outlet />
