@@ -30,9 +30,6 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Build Angular project
         run: npm run build
 
@@ -53,6 +50,9 @@ jobs:
 
           # Remove old files
           git rm -rf .
+
+          rm -r *
+          git commit -m "remove old files"
 
           # Copy generated build files
           cp -r dist/minesweeper/browser/* .
