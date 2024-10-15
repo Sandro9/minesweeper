@@ -55,7 +55,7 @@ jobs:
           git rm -rf .
 
           # Copy generated build files
-          cp -r dist/minesweeper/* .
+          cp -r dist/minesweeper/browser/* .
 
           # Add all files to staging
           git add --all
