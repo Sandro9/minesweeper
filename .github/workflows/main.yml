@@ -33,8 +33,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install angular cli
+        run: npm install -g @angular/cli@18
+
       - name: Build Angular project
-        run: ng build --base-href "/minesweeper"
+        run: npm run build --base-href "/minesweeper"
 
       - name: List remote branches
         run: git ls-remote --heads origin
