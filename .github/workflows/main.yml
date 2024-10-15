@@ -40,20 +40,28 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Install Git if not installed
-          sudo apt-get install git -y
-          # Configure git
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          # Initialize and switch to gh-pages branch
-          git checkout --orphan gh-pages
-          # Remove all files in the new branch
+          # Configure Git with the GitHub Actions bot's credentials
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Check if the gh-pages branch already exists
+          if git ls-remote --exit-code origin gh-pages; then
+            git checkout gh-pages
+          else
+            git checkout --orphan gh-pages
+          fi
+
+          # Remove old files
           git rm -rf .
+
           # Copy generated build files
           cp -r dist/minesweeper/* .
+
           # Add all files to staging
           git add --all
+
           # Commit the changes
           git commit -m "Deploy Angular to GitHub Pages"
-          # Force push to gh-pages branch
-          git push --force origin gh-pages
+
+          # Push to gh-pages branch with token for authentication
+          git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
