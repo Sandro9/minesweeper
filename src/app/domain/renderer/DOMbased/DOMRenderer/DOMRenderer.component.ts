@@ -37,6 +37,7 @@ export class DOMRendererComponent {
       isRevealed: node.getIsRevealed(),
       isFlagged: node.getIsFlagged(),
       value: node.type === 'field' ? node.value : 0,
+      isMine: node.type ==='mine',
     }
   }
 
@@ -53,7 +54,15 @@ export class DOMRendererComponent {
     if(isMine) {
       return mineColor
     }
-    return 'bg-slate-300';
+    const nodeValue = node.value;
+    if(nodeValue === 1) {
+      return ['text-orange-300', 'bg-orange-600'];
+    } else if(nodeValue === 2) {
+      return ['text-yellow-300', 'bg-yellow-600'];
+    } else if(nodeValue === 3) {
+      return ['text-blue-300', 'bg-blue-600'];
+    }
+    return 'bg-slate-700';
   }
 
   public fieldInteraction(index: string) {

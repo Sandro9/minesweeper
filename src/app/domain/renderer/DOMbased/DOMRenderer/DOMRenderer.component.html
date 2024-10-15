@@ -13,6 +13,7 @@
                 @if(nodeInformation !== null) {
                     @let value = nodeInformation.value;
                     @let isFlagged = nodeInformation.isFlagged;
+                    @let isMine = nodeInformation.isMine;
                     @let isRevealed = nodeInformation.isRevealed;
 
 
@@ -21,11 +22,15 @@
                         (click)="fieldInteraction(index)"
                         [ngClass]="getStatusColor(index)"
                     >
-                        @if(isFlagged &&  !isRevealed) {
-                            F
+                        @if(isFlagged && !isRevealed) {
+                            <img src="assets/flag.png" />
                         } @else if(isRevealed) {
                             @if (nodeInformation.value > 0) {
                                 {{value }}
+                            } @else {
+                                @if (isMine) {
+                                    <img src="assets/bomb.png" />
+                                }
                             }
                         }
                     </div>

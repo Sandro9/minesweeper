@@ -1,5 +1,9 @@
 :host {
   display: block;
-  @apply flex items-center justify-center h-screen bg-stone-200;
+  @apply flex items-center justify-center min-h-screen;
 
+}
+
+.background {
+  background-color: #1F1B18;
 }

@@ -1,1 +1,30 @@
-<h1 class="headline">Minesweeper</h1>
+<div class="shadow-lg background p-4 rounded-3xl" [formGroup]="settingsService.settingsForm">
+    <h1 class="headline orangeText flex flex-row items-center gap-2">
+        <img src="assets/bomb.png" class="h-8 w-8"/>
+        Minesweeper
+    </h1>
+    <div class="flex gap-4 mt-8">
+        <input 
+            class="outline-none border-none shadow-md rounded px-2 py-2 flex-grow textColor" 
+            type="text" placeholder="enter seed"
+            formControlName="seed"
+        />
+        <button class="px-5 py-2 button" (click)="randomSeed()">Random</button>
+    </div>
+    <div class="flex gap-4 mt-4">
+        <input 
+            class="outline-none border-none shadow-md rounded px-2 py-2 w-1/2 textColor" 
+            type="number" placeholder="size Y"
+            formControlName="y"
+        />
+        <input 
+            class="outline-none border-none shadow-md rounded px-2 py-2 w-1/2 textColor" 
+            type="number" placeholder="size X"
+            formControlName="x"
+        />
+    </div>
+    <div class="flex gap-4 mt-12">
+        <button class="px-5 py-2 button mt-12 ml-auto" (click)="resetSettings()">reset</button>
+        <button class="px-5 py-2 tran mt-12 disabled:opacity-60 button" [disabled]="!isFormValid()" (click)="startGame()">generate</button>
+    </div>
+</div>

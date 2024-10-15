@@ -1,6 +1,14 @@
-<div class="border-1 border-solid shadow-md rounded py-3 px-8 text-blue-400 font-extrabold">
+<div class="border-1 border-solid shadow-md rounded py-3 px-8 buttonBackground text-gray-200 text-2xl font-semibold">
     {{time() | appTime }} 
 </div>
-<div class="border-1 border-solid shadow-md rounded py-3 px-8 text-blue-400 font-extrabold">
+<button 
+    class="ml-auto mr-4 py-2 px-6 rounded buttonBackground text-gray-200 text-2xl flex flex-row gap-2 items-center justify-center"
+    [ngClass]="{'opacity-50': isFlagModeActive()}"
+    (click)="toggleFlagMode()"
+>
+    <img src="assets/flag.png" class="w-6 h-6" />
+    Flag
+</button>
+<div class="border-1 border-solid shadow-md rounded py-3 px-8 buttonBackground text-gray-200 text-2xl font-semibold">
     {{minesCount()}}
 </div>

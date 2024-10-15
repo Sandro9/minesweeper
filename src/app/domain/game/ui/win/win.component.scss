@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+.glow {
+  box-shadow: inset 80px 0 120px #D9683C,
+  inset -30px 0 120px #eed5cc;
+}
+
+.background {
+  background-color: #1F1B18;
+}
+
+.blueTextGradient {
+  background: #B7DEED;
+  background: radial-gradient(circle farthest-corner at center center, #B7DEED 0%, #71CEEF 25%, #21B4E2 75%, #B7DEED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -8,7 +8,10 @@ export class Playground {
         public readonly grid: PlaygroundGrid
     ){}
 
-    public flagModeActive$ = new BehaviorSubject(false);
+    public readonly flagModeActive$ = new BehaviorSubject(false);
+    public readonly hasWon = new BehaviorSubject(false);
+    public readonly hasLost = new BehaviorSubject(false);
+
 
     public fieldInteraction(index: string): void {
         if(this.flagModeActive$.value) {
@@ -24,7 +27,8 @@ export class Playground {
         node.reveal();
         
         if(node.type === 'mine') {
-            throw new Error('Cannot reveal a mine');
+            this.hasLost.next(true);
+            return;
         }
         if(node.value === 0) {
             node.connections.forEach(connection => {
@@ -42,7 +46,8 @@ export class Playground {
         if(!node) throw new Error(`No node found for index ${index}`);
         node.toggleFlag();
         if(this.checkWinCondition()) {
-            throw new Error('You win!');
+            this.hasWon.next(true);
+            return;
         }
     }
 
