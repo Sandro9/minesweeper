@@ -38,7 +38,7 @@ jobs:
 
       - name: List remote branches
         run: git ls-remote --heads origin
-
+        
       - name: Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -54,7 +54,7 @@ jobs:
           fi
 
           git rm -rf . || true
-          cp -r dist/minesweeper/* .
+          cp -r dist/minesweeper/browser/* .
 
           git add --all
           git commit -m "Deploy Angular to GitHub Pages"
