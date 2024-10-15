@@ -32,7 +32,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        
+
       - name: Build Angular project
         run: npm run build
 
@@ -67,4 +67,4 @@ jobs:
           git commit -m "Deploy Angular to GitHub Pages"
 
           # Push to gh-pages branch with token for authentication
-          git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
+          git push --force origin gh-pages
