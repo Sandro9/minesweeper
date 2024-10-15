@@ -37,6 +37,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Install Git if not installed
           sudo apt-get install git -y
