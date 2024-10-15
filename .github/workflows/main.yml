@@ -48,7 +48,7 @@ jobs:
           # Remove all files in the new branch
           git rm -rf .
           # Copy generated build files
-          cp -r dist/<dein-angular-projekt-name>/* .
+          cp -r dist/minesweeper/* .
           # Add all files to staging
           git add --all
           # Commit the changes
