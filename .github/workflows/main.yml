@@ -36,6 +36,9 @@ jobs:
       - name: Build Angular project
         run: npm run build
 
+      - name: List remote branches
+        run: git ls-remote --heads origin
+        
       - name: Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
