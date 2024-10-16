@@ -5,7 +5,7 @@
     <app-lost />
 } @else {
     @if(playgroundRef !== undefined) {
-        <div class="flex flex-col gap-3 background p-4 rounded-3xl">
+        <div class="flex flex-col gap-6 background p-4 rounded-3xl min-w-[450px]">
             <app-info-bar [playground]="playgroundRef" />
             <app-domrenderer [playground]="playgroundRef"/>
         </div>

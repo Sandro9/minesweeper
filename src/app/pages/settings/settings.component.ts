@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrl: './settings.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent {
   private readonly _router = inject(Router);
   public settingsService = inject(SettingsService);
 
@@ -23,10 +23,10 @@ export class SettingsComponent implements OnInit {
     this.settingsService.isFormValid$
   )
 
-  ngOnInit(): void { 
-    console.log("INIT")
-    this.settingsService.formValue$.subscribe((s) => console.log(s)  );
+  public ngOnInit(): void {
+    this.settingsService.resetSettings();
   }
+
 
   public resetSettings(): void {
     this.settingsService.resetSettings();
@@ -37,7 +37,6 @@ export class SettingsComponent implements OnInit {
   }
 
   public startGame() {
-    console.log("START GAME", this.isFormValid())
     if(!this.isFormValid()) return;
     this._router.navigateByUrl('/game', {})
   }
