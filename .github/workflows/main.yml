@@ -38,6 +38,9 @@ jobs:
 
       - name: Build Angular project
         run: ng build --base-href "/minesweeper/"
+        
+      - name: Copy index.html to 404.html
+        run: cp dist/minesweeper/index.html dist/minesweeper/404.html
 
       - name: List remote branches
         run: git ls-remote --heads origin

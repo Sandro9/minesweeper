@@ -61,6 +61,8 @@ export class DOMRendererComponent {
       return ['text-yellow-300', 'bg-yellow-600'];
     } else if(nodeValue === 3) {
       return ['text-blue-300', 'bg-blue-600'];
+    } else if(nodeValue >= 4) {
+      return ['text-fuchsia-300', 'bg-fuchsia-600'];
     }
     return 'bg-slate-700';
   }
