@@ -3,6 +3,8 @@
 
 Ein klassisches **Minesweeper**-Spiel in einer modernen, webbasierten Implementierung. Das Spiel wurde mit Angular entwickelt und enthält eine anpassbare Einstellungsseite sowie verschiedene Spielmodi. Ziel des Spiels ist es, alle Minen auf dem Spielfeld zu finden, ohne auf eine zu treten!
 
+![image](https://github.com/user-attachments/assets/0bf74784-b31f-4e1d-9284-969aea8cd8f0)
+
 ## 🚀 Features
 
 ### 🎮 Gameplay
