@@ -62,7 +62,7 @@ jobs:
           cp -r dist/minesweeper/browser/* .
           
       - name: Copy index.html to 404.html
-        run: cp dist/minesweeper/index.html dist/minesweeper/404.html
+        run: cp index.html 404.html
 
       - name : commit & push
         run: | 
