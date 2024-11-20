@@ -56,7 +56,6 @@ export class GameComponent implements OnInit {
 
   public ngOnInit(){
     const settings = this._settings.settingsForm.value;
-    console.log(settings);
     if (settings.seed == null || settings.x == null || settings.y == null) {
       this._router.navigate(['/settings'])
       return;

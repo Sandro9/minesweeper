@@ -2,9 +2,14 @@
 @let graphObj = graph();
 @if (playgroundObj !== null && graphObj !== null) {
     <div class="flex flex-col gap-1">
-        @for (_ of height() |range; track $index; let $y = $index) {
+        @let heightItable = height() | range;
+        @let widthIterable = width() | range;
+
+        @for (_ of widthIterable; track $index) {
+            @let $y = $index;
             <div class="flex flex-row gap-1">
-            @for (_ of width() |range; track $index; let $x = $index) {
+            @for (_ of heightItable; track $index) {
+                @let $x = $index;
                 @let index = $y + '-' +$x;
                 @let nodeInformation = getNodeInformation(index);
 

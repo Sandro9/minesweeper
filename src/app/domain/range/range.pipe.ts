@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class RangePipe implements PipeTransform {
 
   transform(value: number): any {
-    return Array(value);
+    return Array(value).fill(value);
   }
 
 }

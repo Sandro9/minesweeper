@@ -15,7 +15,6 @@ export class PlaygroundGenerator {
         const seed = config.seed ?? 1;
         const base = this.generateBase(width, height);
         const filledPlaceholder = this.fillBaseNeighbours(base);
-        console.log(filledPlaceholder);
         return new Playground(
             {
                 dimensions: config.dimensions,

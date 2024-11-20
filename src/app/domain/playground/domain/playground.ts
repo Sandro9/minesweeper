@@ -57,7 +57,6 @@ export class Playground {
 
     private checkWinCondition(): boolean {
         const flaggedMinesCount = this.grid.getGraph()?.nodes.filter(node => node.getIsFlagged() && node.type ==='mine').length;
-        console.log(flaggedMinesCount)
         return flaggedMinesCount === this.meta.totalMines;
     }
 }
